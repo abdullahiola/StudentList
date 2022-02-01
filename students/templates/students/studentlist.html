@@ -1,0 +1,41 @@
+{%extends 'students/base.html'%}
+
+{%block content%}
+  
+<div class="container">
+  <div class="jumbotron">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Roll No.</th>
+          <th scope="col">Photo</th>
+          <th scope="col">Fullname</th>
+          <th scope="col">Course</th>
+          <th scope="col">Grade</th>
+          <th scope="col">Gender</th>
+        </tr>
+      </thead>
+      {%for student in all_students%}
+
+        <tbody>
+          <tr>
+            <th scope="row">{{student.Roll_id}}</th>
+            <td><img src="{{student.Photo.url}}" alt="student_photo" style="width: 100px; height: 100px; border-radius: 50%; padding: 50;"></img></td>
+            <td>{{student.Fullname}}</td>
+            <td>{{student.Course}}</td>
+            <td>{{student.Grade}}</td>
+            <td>{{student.Gender}}</td>
+
+
+
+          </tr>
+          
+        </tbody>
+      {%endfor%}
+
+    </table>
+  </div>
+</div>
+
+
+{%endblock content%}

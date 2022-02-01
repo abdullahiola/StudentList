@@ -1,0 +1,24 @@
+{%extends 'students/base.html'%}
+{% load crispy_forms_tags %}
+
+{%block content%} 
+
+  <div class="container">
+    <div class="page-header">
+
+    </div>
+    <div class="jumbotron">     
+      <form method="POST" enctype="multipart/form-data" class="form-group">
+        {%csrf_token%}
+        {{form|crispy}}        
+        <button type="submit"class="btn btn-primary btn-lg" onclick="windows.alert('Registered sucessful')">Submit</button>
+        <a class="btn btn-link" href="{%url 'studentlist'%}">Check the list</a>
+      </form>
+
+    </div>
+   
+   
+
+  </div>
+ 
+{%endblock content%}
